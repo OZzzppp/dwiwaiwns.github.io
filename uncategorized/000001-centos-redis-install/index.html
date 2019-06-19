@@ -96,24 +96,24 @@
 <meta property="og:site_name" content="Dwiwaiwns&#39;s blog">
 <meta property="og:description" content="CentOS下安装Redis">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/000.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/001.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/002.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/003.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/004.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/005.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/006.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/007.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/008.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/009.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/010.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/011.png">
-<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/012.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/001.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/002.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/003.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/004.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/005.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/006.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/007.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/008.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/009.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/010.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/011.png">
+<meta property="og:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/012.png">
 <meta property="og:updated_time" content="2019-06-19T05:35:48.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS下Redis安装与配置">
 <meta name="twitter:description" content="CentOS下安装Redis">
-<meta name="twitter:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000001-centos-redis-install/000.png">
+<meta name="twitter:image" content="https://dwiwaiwns.github.io/uncategorized/000001-centos-redis-install/000.png">
 
 
 
@@ -452,7 +452,7 @@
 <h3><span id="1下载redis安装包">1.下载redis安装包</span><a href="#1下载redis安装包" class="header-anchor">#</a></h3>
 <p>可去官网 <a href="http://redis.io" target="_blank" rel="noopener">http://redis.io</a> ,也可通过wget命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-4.0.2.tar.gz</span><br></pre></td></tr></table></figure>
-<p><img src="000001-centos-redis-install/000.png" alt="下载"></p>
+<p><img src="/uncategorized/000001-centos-redis-install/000.png" alt="下载"></p>
 <h3><span id="2解压">2.解压</span><a href="#2解压" class="header-anchor">#</a></h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zvxf redis-4.0.2.tar.gz</span><br></pre></td></tr></table></figure>
 <h3><span id="3编译安装">3.编译安装</span><a href="#3编译安装" class="header-anchor">#</a></h3>
@@ -462,7 +462,7 @@
 <li>如果提示&quot;gcc: Command not found&quot;，需安装gcc;<br></li>
 <li>如果提示&quot;couldn’t execute tcl : no such file or dicrectory&quot;, 需安装tcl;<br></li>
 <li>如果提示&quot;zmalloc.h:50:31: error: jemalloc/jemalloc.h: No such file or directory&quot;<br>
-<img src="000001-centos-redis-install/001.png" alt="make"><br><br>
+<img src="/uncategorized/000001-centos-redis-install/001.png" alt="make"><br><br>
 需执行make distclean，然后再make<br><br>
 或者使用make MALLOC=libc</li>
 </ul>
@@ -470,12 +470,12 @@
 <h3><span id="3编译安装">3.编译安装</span><a href="#3编译安装" class="header-anchor">#</a></h3>
 <ul>
 <li>可手动拷贝src目录下redis-server、redis-cli、redis-check-aof、redis-check-dump等至/usr/local/bin目录下，也可执行make install。此处执行make install<br><br>
-<img src="000001-centos-redis-install/002.png" alt="make install"><br><br>
-<img src="000001-centos-redis-install/003.png" alt="usr local bin file"><br></li>
+<img src="/uncategorized/000001-centos-redis-install/002.png" alt="make install"><br><br>
+<img src="/uncategorized/000001-centos-redis-install/003.png" alt="usr local bin file"><br></li>
 <li>执行redis-server –v，可查看版本</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server –v</span><br></pre></td></tr></table></figure>
-<p><img src="000001-centos-redis-install/004.png" alt="redis version"><br></p>
+<p><img src="/uncategorized/000001-centos-redis-install/004.png" alt="redis version"><br></p>
 <h2><span id="二修改配置文件">二．修改配置文件</span><a href="#二修改配置文件" class="header-anchor">#</a></h2>
 <h3><span id="1创建配置文件目录dump-file-目录进程pid目录log目录等">1.创建配置文件目录，dump file 目录，进程pid目录，log目录等</span><a href="#1创建配置文件目录dump-file-目录进程pid目录log目录等" class="header-anchor">#</a></h3>
 <ul>
@@ -486,33 +486,33 @@
 <li>dump file、进程pid、log目录等，一般放在/var/目录下</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/</span><br><span class="line">mkdir redis</span><br><span class="line"><span class="built_in">cd</span> redis</span><br><span class="line">mkdir data <span class="built_in">log</span> run</span><br></pre></td></tr></table></figure>
-<p><img src="000001-centos-redis-install/005.png" alt="dump file、进程pid、log目录"><br></p>
+<p><img src="/uncategorized/000001-centos-redis-install/005.png" alt="dump file、进程pid、log目录"><br></p>
 <h3><span id="2修改配置文件配置参数">2.修改配置文件，配置参数</span><a href="#2修改配置文件配置参数" class="header-anchor">#</a></h3>
 <ul>
 <li>首先拷贝解压包下的redis.conf文件至/etc/redis</li>
 <li>端口<br><br>
-<img src="000001-centos-redis-install/006.png" alt="端口"></li>
+<img src="/uncategorized/000001-centos-redis-install/006.png" alt="端口"></li>
 <li>pid目录<br><br>
-<img src="000001-centos-redis-install/007.png" alt="pid"></li>
+<img src="/uncategorized/000001-centos-redis-install/007.png" alt="pid"></li>
 <li>dump目录<br><br>
-<img src="000001-centos-redis-install/008.png" alt="dump"></li>
+<img src="/uncategorized/000001-centos-redis-install/008.png" alt="dump"></li>
 <li>log存储目录<br><br>
-<img src="000001-centos-redis-install/009.png" alt="log"></li>
+<img src="/uncategorized/000001-centos-redis-install/009.png" alt="log"></li>
 </ul>
 <h3><span id="3持久化">3.持久化</span><a href="#3持久化" class="header-anchor">#</a></h3>
 <p>默认rdb，可选择是否开启aof，若开启，修改配置文件appendonly</p>
 <h3><span id="4启动redis">4.启动redis</span><a href="#4启动redis" class="header-anchor">#</a></h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server /etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
-<p><img src="000001-centos-redis-install/010.png" alt="启动"><br><br>
+<p><img src="/uncategorized/000001-centos-redis-install/010.png" alt="启动"><br><br>
 配置为后台启动<br><br>
-<img src="000001-centos-redis-install/011.png" alt="daemonize"><br><br>
+<img src="/uncategorized/000001-centos-redis-install/011.png" alt="daemonize"><br><br>
 改成yes</p>
 <h2><span id="三配置服务">三．配置服务</span><a href="#三配置服务" class="header-anchor">#</a></h2>
 <h3><span id="1创建redis启动脚本">1.创建redis启动脚本</span><a href="#1创建redis启动脚本" class="header-anchor">#</a></h3>
 <p>拷贝解压包下utils下redis启动脚本至/etc/init.d/</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp redis_init_script /etc/init.d/redis</span><br></pre></td></tr></table></figure>
 <p>修改脚本pid及conf路径为实际路径<br><br>
-<img src="000001-centos-redis-install/012.png" alt="config server script"></p>
+<img src="/uncategorized/000001-centos-redis-install/012.png" alt="config server script"></p>
 <ul>
 <li>至此，在/etc/init.d/目录下，已经可以通过service redis start/stop 命令启动和关闭redis</li>
 </ul>
