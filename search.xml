@@ -12,7 +12,7 @@
   <entry>
     <title><![CDATA[GitBook书单]]></title>
     <url>%2Funcategorized%2F000011-gitbook-list%2F</url>
-    <content type="text"><![CDATA[GitBook书单，持续更新…… Java Other Java# 《Java 编程思想》（Thinking in Java） 《编程之法：面试和算法心得》 《Effective Java》第三版中文版 （很尴尬，不完整，算是找到的最多的一个） Other# 《Redis 设计与实现》]]></content>
+    <content type="text"><![CDATA[GitBook书单，持续更新…… Java Redis ElasticSearch Java# 《Java 编程思想》（Thinking in Java） 《编程之法：面试和算法心得》 《Effective Java》第三版中文版 （很尴尬，不完整，算是找到的最多的一个） Redis# 《Redis 设计与实现》 ElasticSearch# 《Elasticsearch: 权威指南》]]></content>
       <tags>
         <tag>Java</tag>
         <tag>Book</tag>
