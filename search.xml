@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Deepin 安装 SecureCRT]]></title>
+    <url>%2Funcategorized%2F000012-deepin-securecrt%2F</url>
+    <content type="text"><![CDATA[deepin linux 安装 SecureCRT 步骤以及问题解决 1 下载安装包 2 解压到自己的程序目录 3 下载激活文件 4 执行激活文件，激活自己目录下的SecureCRT 5 运行 6 可能遇到的问题 6.1 libjpeg.so.8 问题 6.2 问题详情： 6.3 解决步骤 6.3.1 下载 libjpeg 6.3.2 安装 libjpeg 6.3.3 配置 libjpeg.so.8 路径 6.3.3.1 将 libjpeg.so.8 的路径/usr/local/lib添加到/etc/ld.so.conf 文件 6.3.3.2 将 libjpeg.so.8 路径添加到环境变量 6.3.3.3 执行 ldconfig 命令 1 下载安装包# 下载地址： 1https://www.vandyke.com 2 解压到自己的程序目录# 3 下载激活文件# 1wget http://download.boll.me/securecrt_linux_crack.pl 4 执行激活文件，激活自己目录下的SecureCRT# 1sudo perl securecrt_linux_crack.pl /usr/bin/SecureCRT 5 运行# 在SecureCRT目录下执行 1./SecureCRT 6 可能遇到的问题# 6.1 libjpeg.so.8 问题# 6.2 问题详情：# 1./SecureCRT: error while loading shared libraries: libjpeg.so.8: cannot open shared object file: No such file or directory 6.3 解决步骤# 6.3.1 下载 libjpeg# 1http://www.ijg.org/jpegsrc.v8c.tar.gz 6.3.2 安装 libjpeg# 解压后执行如下命令： 1234./configuremakemake install＃make test 最后一条命令make test是用来测试这个库是否安装成功的，执行这个命令后，你会看到 libjpeg 解压后所在目录下多了几张图片等，就是这个命令生成的。最后还可以用 make clean 来清理一些临时文件。 参考地址 http://blog.sina.com.cn/s/blog_7956a73c0100wj9s.html 6.3.3 配置 libjpeg.so.8 路径# 6.3.3.1 将 libjpeg.so.8 的路径/usr/local/lib添加到/etc/ld.so.conf 文件# 6.3.3.2 将 libjpeg.so.8 路径添加到环境变量# 12echo &apos;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib&apos; &gt;&gt; ~/.bashrcsources ~/.bashrc 6.3.3.3 执行 ldconfig 命令#]]></content>
+      <tags>
+        <tag>Deepin</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GitBook书单]]></title>
+    <url>%2Funcategorized%2F000011-gitbook-list%2F</url>
+    <content type="text"><![CDATA[GitBook书单，持续更新…… Java Other Java# 《Java 编程思想》（Thinking in Java） 《编程之法：面试和算法心得》 《Effective Java》第三版中文版 （很尴尬，不完整，算是找到的最多的一个） Other# 《Redis 设计与实现》]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>Book</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[synchronized实现原理]]></title>
+    <url>%2Funcategorized%2F000010-java-synchronized%2F</url>
+    <content type="text"><![CDATA[传送门： 深入理解Java并发之synchronized实现原理]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IntrospectorCleanupListener的作用]]></title>
+    <url>%2Funcategorized%2F000009-IntrospectorCleanupListener%2F</url>
+    <content type="text"><![CDATA[IntrospectorCleanupListener——一个非常重要的Listener IntrospectorCleanupListener作用# 使用示例 1234&lt;!--web.xml--&gt;&lt;listener&gt; &lt;listener-class&gt;org.springframework.web.util.IntrospectorCleanupListener&lt;/listener-class&gt;&lt;/listener&gt; 作用：# 主要用于解决java.beans.Introspector导致的内存泄漏问题 该监听器应该配置在web.xml中与Spring相关监听器中的第一个位置 它是一个在web应用关闭的时候，清除JavaBeans Introspector的监听器。在web.xml中注册这个listener。可以保证在web 应用关闭的时候释放与掉这个web 应用相关的class loader 和由它管理的类 关于java.beans.Introspector# JDK中的java.beans.Introspector类的用途是发现Java类是否符合JavaBean规范，如果有的框架或程序用到了Introspector类，那么就会启用一个系统级别的缓存，此缓存会存放一些曾加载并分析过的JavaBean的引用。当Web服务器关闭时，由于此缓存中存放着这些JavaBean的引用，所以垃圾回收器无法回收Web容器中的JavaBean对象，最后导致内存变大。 不幸的是，清除Introspector的唯一方式是刷新整个缓冲。这是因为我们没法判断哪些是属于你的应用的引用，所以删除被缓冲的introspection会导致把这台电脑上的所有应用的introspection都删掉。 一些类库和框架往往会产生这个问题，例如:Struts 和 Quartz。]]></content>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[个人技能栈]]></title>
+    <url>%2Funcategorized%2F000008-knowledge-stack%2F</url>
+    <content type="text"><![CDATA[本帖持续更新……#]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java char 类型转换问题（二）]]></title>
+    <url>%2Funcategorized%2F000007-java-char-casts-002%2F</url>
+    <content type="text"><![CDATA[Java 类型强制转换与移位问题二 1System.out.println((int)(char)(byte) -1); 分析 第一步：(byte) -1 第二步：(char)(byte) -1 第三步：(int)(char)(byte) -1 基于上一篇blog中提到的一个规则，在本文中做一个详细解释，规则内容： 123从较窄的整型转换成较宽的整型时的符号扩展：如果最初的数值类型是有符号的，那么就执行符号扩展；如果它是char，那么不管它将要被转换成什么类型，都执行零扩展 例子： 12345public class ShiftTest&#123; public static void main (String[] args)&#123; System.out.println((int)(char)(byte) -1); &#125;&#125; 输出结果： 165535 分析# 第一步：(byte) -1# 123int -1的原码：1000 0000 0000 0000 0000 0000 0000 0001int -1的反码：1111 1111 1111 1111 1111 1111 1111 1110int -1的补码：1111 1111 1111 1111 1111 1111 1111 1111 转换为byte时，高位截断，则(byte) -1的补码为： 1补码：1111 1111 第二步：(char)(byte) -1# 从 byte 到 char 的转型比较麻烦一点，因为 byte 是一个有符号类型，而 char 是一个无符号类型。 在将一个整数类型转换成另一个宽度更宽的整数类型时，通常是可以保持其数值的， 但是却不可能将一个负的 byte 数值表示成一个 char 。 因此，从 byte 到 char 的转换被认为不是一个拓宽原始类型的转换， 而是一个拓宽并窄化原始类型的转换（widening and narrowing primitive conversion）：byte被转换成了int，而这个int再被转换成了char。 于是回到文章开头提到的规则，这个规则原话内容应该是出自《Java解惑》，按照规则，变换之后： 1补码：1111 1111 1111 1111 第三步：(int)(char)(byte) -1# 按照规则，char 不管它将要被转换成什么类型，都执行零扩展，则： 1补码：0000 0000 0000 0000 1111 1111 1111 1111 所以最终结果为：65535]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java char</tag>
+        <tag>Java强制类型转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java char 类型转换问题（一）]]></title>
+    <url>%2Funcategorized%2F000006-java-char-casts-001%2F</url>
+    <content type="text"><![CDATA[Java 类型强制转换与移位问题一 12345char c = (char) -1;c &gt;&gt;= 15;c &gt;&gt;= 17;c &gt;&gt;= 31;c &gt;&gt;= 33; 1. 疑惑 2. 问题原因 2.1. 问题a： 2.2. 问题b： 2.2.1. (char)-1 &gt;&gt;&gt; 15： 2.2.2. (char)-1 &gt;&gt;&gt; 17： 2.2.3. (char)-1 &gt;&gt;&gt; 31： 2.2.4. (char)-1 &gt;&gt;&gt; 33： 1. 疑惑# 之前在看移位时注意到 char 的几个问题，我们先看一个例子 1234567891011121314151617181920212223242526class ShiftTest&#123; public static void main(String[] args) &#123; int i = -1; char c = (char) i; System.out.println(String.format("%-15s:%s", "c's binary str", Integer.toBinaryString(c))); System.out.println(String.format("%-15s:%s", "c's char", c)); System.out.println(String.format("%-15s:%s", "(int)c1", (int) c)); char c1 = (char) -1; System.out.println(String.format("%-15s:%s", "c1 binary str", Integer.toBinaryString(c1))); c1 &gt;&gt;= 15; System.out.println(String.format("%-15s:%s", "c1 &gt;&gt;&gt;= 15", Integer.toBinaryString(c1))); char c2 = (char) -1; c2 &gt;&gt;= 17; System.out.println(String.format("%-15s:%s", "c2 &gt;&gt;&gt;= 17", Integer.toBinaryString(c2))); char c3 = (char) -1; c3 &gt;&gt;= 31; System.out.println(String.format("%-15s:%s", "c3 &gt;&gt;&gt;= 31", Integer.toBinaryString(c3))); char c4 = (char) -1; c4 &gt;&gt;= 33; System.out.println(String.format("%-15s:%s", "c4 &gt;&gt;&gt;= 33", Integer.toBinaryString(c4))); &#125;&#125; 这段代码的输出结果如下： 12345678c&apos;s binary str :1111111111111111c&apos;s char :(int)c1 :65535c1 binary str :1111111111111111c1 &gt;&gt;&gt;= 15 :1c2 &gt;&gt;&gt;= 17 :0c3 &gt;&gt;&gt;= 31 :0c4 &gt;&gt;&gt;= 33 :111111111111111 第二行在Intellij IDEA里面运行输出的是一个小方框 这里可以提出我的疑惑了： a. int的 -1 强转为 char 后，再强转回 int 的输出为什么是65535 b. (char)-1右移15、17、31、33位对应的值 先强调一个知识点——各个数据类型位数长度是不一样的，Java使用的是二进制的补码运算。 然后我们针对这两个问题详细分析一下。 2. 问题原因# 2.1. 问题a：# 123int -1的原码：1000 0000 0000 0000 0000 0000 0000 0001int -1的反码：1111 1111 1111 1111 1111 1111 1111 1110int -1的补码：1111 1111 1111 1111 1111 1111 1111 1111 第一步强转为char时，高位截断后： 1补码：1111 1111 1111 1111 第二步强转会int时： 这里需要补充一个规则 123从较窄的整型转换成较宽的整型时的符号扩展：如果最初的数值类型是有符号的，那么就执行符号扩展；如果它是char，那么不管它将要被转换成什么类型，都执行零扩展 因此，再强转回int时 1补码：0000 0000 0000 0000 1111 1111 1111 1111 最高位为 0，所以当做正数处理，原反补都一样，转成 10 进制即为 65535 2.2. 问题b：# char在进行移位操作时分几个步骤： 123第一步，转成int第二步，按照int进行移位第三步，转回char 2.2.1. (char)-1 &gt;&gt;&gt; 15：# 12345678前面说过 (char)-1 的补码:1111 1111 1111 1111转为int后:0000 0000 0000 0000 1111 1111 1111 1111执行 &gt;&gt;&gt;15：0000 0000 0000 0000 0000 0000 0000 0001转char：0000 0000 0000 0001 所以结果为 1 2.2.2. (char)-1 &gt;&gt;&gt; 17：# 12345678前面说过 (char)-1 的补码:1111 1111 1111 1111转为int后:0000 0000 0000 0000 1111 1111 1111 1111执行 &gt;&gt;&gt;17：0000 0000 0000 0000 0000 0000 0000 0000转char：0000 0000 0000 0000 所以结果为 0 2.2.3. (char)-1 &gt;&gt;&gt; 31：# 12345678前面说过 (char)-1 的补码:1111 1111 1111 1111转为int后:0000 0000 0000 0000 1111 1111 1111 1111执行 &gt;&gt;&gt;31：0000 0000 0000 0000 0000 0000 0000 0000转char：0000 0000 0000 0000 所以结果为 0 2.2.4. (char)-1 &gt;&gt;&gt; 33：# 123456789前面说过 (char)-1 的补码:1111 1111 1111 1111转为int后:0000 0000 0000 0000 1111 1111 1111 1111执行 &gt;&gt;&gt;33：（这里，需要遵循 int 的移位规则了， 33 超出了 int 类型的长度，33 按 int 位长 32 取余得 1， 相当于 &gt;&gt;&gt; 1） 0000 0000 0000 0000 0111 1111 1111 1111转char：0111 1111 1111 1111 所以输出结果的二进制字符串是 15 个 1]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java char</tag>
+        <tag>Java强制类型转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java移位]]></title>
+    <url>%2Funcategorized%2F000005-java-shift%2F</url>
+    <content type="text"><![CDATA[Java的数据类型字节长度 Java的数据类型取值范围 移位操作…… 1.Java的数据类型字节长度 2.Java的数据类型取值范围 3.移位操作 3.1.左移 3.2.右移 3.3.无符号右移 1移位操作是针对于二进制数来说的，二进制基础，本文不做讲解 1.Java的数据类型字节长度# 12345678byte:8bitsint:32bitschar:16bitsshort:16bitslong:64bitsboolean:-float:32bitsdouble:64bits 2.Java的数据类型取值范围# 3.移位操作# 移位操作符有左移位&lt;&lt;、右移位&gt;&gt;和无符号右移&gt;&gt;&gt;，当然类似于+=这种操作符，也有&lt;&lt;=和&gt;&gt;= 3.1.左移# 对于位数左移之后，低位的补0 例如：3&lt;&lt;2，表示3向左移动两位，3的二进制表示是&quot;11&quot;，左移两位后是&quot;1100&quot;，也就是乘以4即等于12 3.2.右移# 和左移不一样的地方就是：如果被位移的数是负数，那么右移之后，高位全都补1；如果是正数，那么右移之后，高位全都补0。也就是正数依然是正数，负数依然是负数。 3.3.无符号右移# 这种移位操作与右移不同的地方就是：无论是正数还是负数，在移位之后，高位都补0。即移位之后永远都是正数。 【注】 1（1）无论是左移还是右移（包括无符号右移），如果移动的位数超过规定的bit数，都会与最大移位数取模之后进行计算。 int类型，3&lt;&lt;33，其实就是3&lt;&lt;1；同理，右移和无符号右移也是一样 long型数据，3&lt;&lt;65其实就是3&lt;&lt;1 12（2）对于byte和short进行移位运算的时候，会被转换为int型。进行右移的时候，可能会对高位截断 （byte和short本身比int字节少，因此转成int计算完毕，再转换回去的时候，可能会对高位截断） 例如： 123456789101112131415161718192021222324public class ShiftTest &#123; public static void main(String[] args) &#123; int i = -1; System.out.println(String.format("%-15s:%s", "int i = -1", Integer.toBinaryString(i))); i &gt;&gt;&gt;= 10; System.out.println(String.format("%-15s:%s", "i &gt;&gt;&gt;= 10", Integer.toBinaryString(i))); long l = -1; System.out.println(String.format("%-15s:%s", "long l = -1", Long.toBinaryString(l))); l &gt;&gt;&gt;= 10; System.out.println(String.format("%-15s:%s", "l &gt;&gt;&gt;= 10", Long.toBinaryString(l))); short s = -1; System.out.println(String.format("%-15s:%s", "short s = -1", Integer.toBinaryString(s))); s &gt;&gt;&gt;= 10; System.out.println(String.format("%-15s:%s", "s &gt;&gt;&gt;= 10", Integer.toBinaryString(s))); byte b = -1; System.out.println(String.format("%-15s:%s", "byte b = -1", Integer.toBinaryString(b))); b &gt;&gt;&gt;= 10; System.out.println(String.format("%-15s:%s", "b &gt;&gt;&gt;= 10", Integer.toBinaryString(b))); byte c = -1; System.out.println(String.format("%-15s:%s", "byte c = -1:", Integer.toBinaryString(c))); System.out.println(String.format("%-15s:%s", "c &gt;&gt;&gt;= 10:", Integer.toBinaryString(c &gt;&gt;&gt; 10))); &#125;&#125; 输出结果： 12345678910int i = -1 :11111111111111111111111111111111i &gt;&gt;&gt;= 10 :1111111111111111111111long l = -1 :1111111111111111111111111111111111111111111111111111111111111111l &gt;&gt;&gt;= 10 :111111111111111111111111111111111111111111111111111111short s = -1 :11111111111111111111111111111111s &gt;&gt;&gt;= 10 :11111111111111111111111111111111byte b = -1 :11111111111111111111111111111111b &gt;&gt;&gt;= 10 :11111111111111111111111111111111byte c = -1: :11111111111111111111111111111111c &gt;&gt;&gt;= 10: :1111111111111111111111]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java单例模式双重锁（Double-Check）问题]]></title>
+    <url>%2Funcategorized%2F000004-double-check%2F</url>
+    <content type="text"><![CDATA[单例模式 Double-Check 问题 很久之前就看到过这个问题，但是并没有完全吃透，现在重新再理解了一次，就想记录下来。 进入正题，该模式的代码如下 123456789101112class Singleton&#123; public static Singleton instance; public static Singleton getInstance()&#123; if (instance == null) &#123; // 1 synchronized(Singleton.class) &#123; // 2 if (instance == null) // 3 instance = new Singleton(); // 4 &#125; &#125; return instance; &#125;&#125; 该模式是对下面代码的改进 123456789class Singleton&#123; public static Singleton instance; public static Singleton getInstance()&#123; if (instance == null) &#123; instance = new Singleton(); &#125; return instance; &#125;&#125; 该模式目的是对 instance 延迟初始化。如果直接加同步锁，也就是保留2、3、4步骤，那么每次访问的时候都需要同步，增加了系统开销，于是有了双重检查模式。 但是最开始的代码块是有问题的，问题根源在哪呢？ 实际存在的问题是无序性，第4步的操作其实分两个步骤，即分配内存和将 instance 指向内存 第4步这个new操作是无序的，它可能会被编译成： a. 先分配内存，让 instance 指向这块内存 b. 在内存中创建对象 或者： a. 在内存中创建对象 a. 让 instance 指向这个对象 synchronized 虽然是互斥的，但是如果 new 被编译成第一种方式，线程 t1 执行到 a ，线程 t2 执行到 1。那么 t2 读到的 instance 就可能是 null ,也可能不是 null 。 如果读到的是null，反而没问题，接下来会继续等待 synchronized 锁；如果读到的不是 null，然后 return instanse，但是 instance 可能还没有执行构造方法，然后去调用的话，很有可能会出现其他问题 解决方案1： 1.加 volatile 2.Initialization on Demand Holder（IODH） 解决方案2： 代码如下 123456789public class Singleton &#123; static class SingletonHolder &#123; static Singleton instance = new Singleton(); &#125; public static Singleton getInstance()&#123; return SingletonHolder.instance; &#125; &#125; 参考： https://blog.csdn.net/dl88250/article/details/5439024 https://blog.csdn.net/anjxue/article/details/51038466]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[annotation-config VS component-scan]]></title>
+    <url>%2Funcategorized%2F000003-annotation-config-vs-component-scan%2F</url>
+    <content type="text"><![CDATA[context:annotation-config 用于激活那些已经在spring容器里注册过的bean context:component-scan 除了具有context:annotation-config的功能之外，还可以…… &lt;context:annotation-config&gt; 与 &lt;context:component-scan&gt;的区别# &lt;context:annotation-config&gt; 用于激活那些已经在spring容器里注册过的bean（无论是通过xml的方式还是通过package sanning的方式）上面的注解，是一个注解处理工具。# &lt;context:component-scan&gt; 除了具有&lt;context:annotation-config&gt;的功能之外，&lt;context:component-scan&gt;还可以在指定的package下扫描以及注册Java Bean。# 【重点】context:annotation-config只处理注册过的bean 参考： https://stackoverflow.com/questions/7414794/difference-between-contextannotation-config-vs-contextcomponent-scan/ https://www.cnblogs.com/leiOOlei/p/3713989.html https://blog.csdn.net/baple/article/details/16864835 找到好几个完全一样的帖子（日志打印出来对象的ID都一样），我已经傻傻分不清原创（手动捂脸），倾向于stackoverflow原创吧]]></content>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Tomcat 源码（一）—— 源码运行环境]]></title>
+    <url>%2Funcategorized%2F000002-tomcat-source-01%2F</url>
+    <content type="text"><![CDATA[Tomcat 源码运行环境配置 1.下载 2.配置工程 2.1. 解压文件 2.2.配置目录 2.3.配置 pom 文件 2.3.1.在 tomcat-9 目录创建 pom 文件 2.3.2.编辑 “tomcat-9/pom.xml” 2.4.在IDEA中打开工程 2.5.编辑 run config 参数 3.运行并访问 在 IntelliJ IDEA 中打开 Tomcat 源码# 导入工程的方法:# 1.通过源码生成eclipse项目，再导入IDEA 2.直接添加pom文件 此文档介绍第二种方法在IDEA中打开源码，第一种方法请参考 Apache 官方网站。 1.下载# 下载源码（src）以及运行文件（bin），下载地址 apache 2.配置工程# 2.1. 解压文件# 2.2.配置目录# 创建 “tomcat-9” 目录 创建 “tomcat-source” 目录 创建 “catalina-home” 目录 移动 bin 文件到 “catalina-home” 目录 移动源码文件到 “tomcat-source” 目录 2.3.配置 pom 文件# 2.3.1.在 tomcat-9 目录创建 pom 文件# 2.3.2.编辑 “tomcat-9/pom.xml”# 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt; &lt;artifactId&gt;Tomcat9.0&lt;/artifactId&gt; &lt;name&gt;Tomcat9.0&lt;/name&gt; &lt;version&gt;9.0&lt;/version&gt; &lt;build&gt; &lt;finalName&gt;Tomcat9.0&lt;/finalName&gt; &lt;sourceDirectory&gt;java&lt;/sourceDirectory&gt; &lt;testSourceDirectory&gt;test&lt;/testSourceDirectory&gt; &lt;resources&gt; &lt;resource&gt; &lt;directory&gt;java&lt;/directory&gt; &lt;/resource&gt; &lt;/resources&gt; &lt;testResources&gt; &lt;testResource&gt; &lt;directory&gt;test&lt;/directory&gt; &lt;/testResource&gt; &lt;/testResources&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt; &lt;version&gt;2.3&lt;/version&gt; &lt;configuration&gt; &lt;encoding&gt;UTF-8&lt;/encoding&gt; &lt;source&gt;1.8&lt;/source&gt; &lt;target&gt;1.8&lt;/target&gt; &lt;/configuration&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;junit&lt;/groupId&gt; &lt;artifactId&gt;junit&lt;/artifactId&gt; &lt;version&gt;4.4&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;ant&lt;/groupId&gt; &lt;artifactId&gt;ant&lt;/artifactId&gt; &lt;version&gt;1.7.0&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;wsdl4j&lt;/groupId&gt; &lt;artifactId&gt;wsdl4j&lt;/artifactId&gt; &lt;version&gt;1.6.2&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;javax.xml&lt;/groupId&gt; &lt;artifactId&gt;jaxrpc&lt;/artifactId&gt; &lt;version&gt;1.1&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.eclipse.jdt.core.compiler&lt;/groupId&gt; &lt;artifactId&gt;ecj&lt;/artifactId&gt; &lt;version&gt;4.2.2&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;/project&gt; 2.4.在IDEA中打开工程# 2.5.编辑 run config 参数# 1234-Dcatalina.home=catalina-home-Dcatalina.base=catalina-home-Djava.endorsed.dirs=catalina-home/endorsed-Djava.io.tmpdir=catalina-home/temp 3.运行并访问# 1http://127.0.0.1:8080/]]></content>
+      <tags>
+        <tag>Tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS下Redis安装与配置]]></title>
+    <url>%2Funcategorized%2F000001-centos-redis-install%2F</url>
+    <content type="text"><![CDATA[CentOS下安装Redis 一．安装redis 1.下载redis安装包 2.解压 3.编译安装 3.编译安装 二．修改配置文件 1.创建配置文件目录，dump file 目录，进程pid目录，log目录等 2.修改配置文件，配置参数 3.持久化 4.启动redis 三．配置服务 1.创建redis启动脚本 2.配置脚本执行权限 3.设置自启动 一．安装redis# 1.下载redis安装包# 可去官网 http://redis.io ,也可通过wget命令 1wget http://download.redis.io/releases/redis-4.0.2.tar.gz 2.解压# 1tar -zvxf redis-4.0.2.tar.gz 3.编译安装# 1cd redis-4.0.2 make 如果提示&quot;gcc: Command not found&quot;，需安装gcc; 如果提示&quot;couldn’t execute tcl : no such file or dicrectory&quot;, 需安装tcl; 如果提示&quot;zmalloc.h:50:31: error: jemalloc/jemalloc.h: No such file or directory&quot; 需执行make distclean，然后再make 或者使用make MALLOC=libc 12make distcleanmake MALLOC=libc 3.编译安装# 可手动拷贝src目录下redis-server、redis-cli、redis-check-aof、redis-check-dump等至/usr/local/bin目录下，也可执行make install。此处执行make install 执行redis-server –v，可查看版本 1redis-server –v 二．修改配置文件# 1.创建配置文件目录，dump file 目录，进程pid目录，log目录等# 配置文件一般放在/etc/下，创建redis目录 12cd /etc/mkdir redis dump file、进程pid、log目录等，一般放在/var/目录下 1234cd /var/mkdir rediscd redismkdir data log run 2.修改配置文件，配置参数# 首先拷贝解压包下的redis.conf文件至/etc/redis 端口 pid目录 dump目录 log存储目录 3.持久化# 默认rdb，可选择是否开启aof，若开启，修改配置文件appendonly 4.启动redis# 1redis-server /etc/redis/redis.conf 配置为后台启动 改成yes 三．配置服务# 1.创建redis启动脚本# 拷贝解压包下utils下redis启动脚本至/etc/init.d/ 1cp redis_init_script /etc/init.d/redis 修改脚本pid及conf路径为实际路径 至此，在/etc/init.d/目录下，已经可以通过service redis start/stop 命令启动和关闭redis 2.配置脚本执行权限# 1chmod +x /etc/init.d/redis 3.设置自启动# 1chkconfig redis on]]></content>
+      <tags>
+        <tag>CentOS</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[develop technology]]></title>
+    <url>%2Funcategorized%2F000000-technology%2F</url>
+    <content type="text"><![CDATA[开发测试过程中会使用到的东西 Utils Test Utils# General：Apache Commons 必备。尽量使用 3.0 以上版本。Guava 是 Google 推出的产品，新鲜的功能更多一些。 JSON：Jackon功能强大。 XML：据说 JDK 自带的 JAXB 就很好。 Email：直接用 Spring 的封装。 Logging：slf4j, log4j。 Schedule：使用 Spring 的 Schedule。 时间日期：JodaTime。 io：简单的文件 io 用 apache commons 或者 google guava。zip 文件处理用 zip4j。 读取命令行参数：JCommander是一个简单好用的命令行参数解析框架。 Test# Spring测试框架：Spring Test/ testng。 Mock：Mockito 是现在最优雅简洁的 mock 框架了，强烈推荐使用。Mockito 搞不定的部分，比如static 函数，搭配 PowerMock。 数据库测试：使用 H2 Database 内存数据库。用 maven-surefire-plugin 多线程执行测试任务。 功能测试：使用 jetty-maven-plugin。 Performance/Stability Test：Jmeter。]]></content>
+      <tags>
+        <tag>Utils</tag>
+      </tags>
+  </entry>
+</search>
